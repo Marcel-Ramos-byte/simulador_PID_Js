@@ -1,0 +1,177 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10px;
+  gap: 10px;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+}
+
+.painel-controle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.inputs label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.checkboxes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  background: #0066cc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004999;
+}
+
+/* Painel do sistema (fluxo, tanque e gráfico) */
+.painel-sistema {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.fluxograma {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.bloco {
+  background: #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.seta {
+  font-size: 20px;
+}
+
+.ativo {
+  background: #4caf50 !important;
+  color: white;
+}
+
+/* Tanque */
+.tanque-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.tanque {
+  width: 80px;
+  height: 200px;
+  border: 2px solid #333;
+  position: relative;
+  background: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.agua {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #2196f3;
+  transition: height 0.5s ease;
+}
+
+#nivel {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Gráfico */
+canvas#grafico {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+/* Explicações */
+.explicacao {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fluxograma {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tanque {
+    height: 150px;
+  }
+
+  .painel-sistema {
+    padding: 5px;
+  }
+}
